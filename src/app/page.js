@@ -7,6 +7,10 @@ export default function Home() {
   const [query, setQuery] = useState("");
   const router = useRouter();
 
+  /**
+   * Cuando haga submit en el formulario va a la page de resultados
+   * @param {*} e
+   */
   const handleSearch = (e) => {
     e.preventDefault();
     if (query.trim()) {

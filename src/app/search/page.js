@@ -1,5 +1,4 @@
-// app/search/page.js
-"use client"; // Necesario para el uso de `useRouter` y `useSearchParams` en componentes de cliente
+"use client";
 
 import { useRouter, useSearchParams } from "next/navigation";
 import Image from "next/image";
@@ -16,8 +15,6 @@ export default function Search() {
   const [selectedResult, setSelectedResult] = useState(null);
 
   useEffect(() => {
-    // Simular la búsqueda de resultados
-    // Reemplaza esto con una llamada a tu API o lógica de búsqueda
     if (searchQuery) {
       const performSearch = async () => {
         setLoading(true);
@@ -93,6 +90,7 @@ export default function Search() {
             <p>Loading...</p>
           ) : results.length > 0 ? (
             <ul style={{ listStyle: "none", padding: 0 }}>
+              {/*Se mapea el resultado obtenido del BE */}
               {results.map((result, index) => (
                 <li
                   key={index}
@@ -112,6 +110,7 @@ export default function Search() {
           )}
         </div>
       </div>
+      {/** Seccion en la que se visualiza el resumen de la opcion seleccionada */}
       <div style={{ flex: 1, marginLeft: "20px" }}>
         {selectedResult ? (
           <div style={{ padding: "20px", border: "1px solid #ddd" }}>
